@@ -1,0 +1,9 @@
+# Se regeneran al ejecutar el notebook o pesan demasiado para GitHub (> 100 MB)
+cache/
+modelos/
+# Python y Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+# Sistema
+.DS_Store

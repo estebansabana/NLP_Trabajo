@@ -1,0 +1,7 @@
+,BM25,BM25 + expansión W2V,Densa (Sentence-BERT),Híbrida (RRF),Automático
+N01 · swimming pool / piscina,0.0,0.0,9.0,1.0,2.0
+N02 · breakfast buffet / desayuno buffet,0.0,0.0,10.0,9.0,5.0
+N03 · slow wifi internet connection / wifi lento,0.0,1.0,9.0,4.0,2.0
+N06 · rude staff at the reception / personal grosero,0.0,0.0,2.0,1.0,2.0
+N08 · noisy room at night / ruido en la habitación,0.0,0.0,7.0,1.0,2.0
+promedio,0.0,0.2,7.4,3.2,2.6
