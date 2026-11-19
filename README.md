@@ -18,7 +18,7 @@ Sobre 17.976 reseñas de hoteles de lujo (2014–2024), el proyecto responde tre
 | Validación temporal (entrena 2014–2021, prueba 2022–2024) | F1-macro 0,931: no hay deriva que dañe el modelo |
 | Word2Vec frente a TF-IDF con 250 reseñas etiquetadas | 0,831 frente a 0,587; TF-IDF gana desde unas 2.000 |
 | Palabras más asociadas a la queja | *star hotel* (9,9 veces más en negativas), *told* (13,6), *paid* (12,7) |
-| Búsqueda en español con Sentence-BERT multilingüe | 7,4 de 10 resultados comunes con la consulta en inglés; BM25: 0 |
+| Buscador (MAP@10, juicios del equipo, kappa 0,889) | Inglés: BM25 0,894 · Español: Sentence-BERT 0,789 frente a 0,349 de BM25 · Sistema automático: 0,784 global |
 | Aspectos más criticados (frases negativas) | Precio 22,8 %, wifi 19,2 % (promedio 6,5 %) |
 
 ![Palabras que caracterizan cada polaridad](figures/07_palabras_negativas_positivas.png)
@@ -76,6 +76,6 @@ python -m src.buscador "slow wifi" --sistema bm25
 | 9 | Buscador: BM25, expansión con Word2Vec, Sentence-BERT multilingüe, fusión RRF, mapa de quejas por frase y evaluación con MAP |
 | 10 | Conclusiones, limitaciones y trabajo futuro |
 
-## Pendiente
+## Evaluación del buscador
 
-La evaluación del buscador con MAP@10, P@10, nDCG@10 y MRR@10 requiere los juicios de relevancia de `data/anotaciones/juicios_relevancia.xlsx` (335 pares, con 30 dobles para el kappa). Cuando estén completos, basta con volver a ejecutar el notebook.
+Los juicios de relevancia (`data/anotaciones/juicios_relevancia.xlsx`) son 335 pares (necesidad, reseña) juzgados a ciegas por los dos autores, con 30 juicios dobles (kappa de Cohen 0,889). Las métricas por sistema están en `results/buscador_map.csv`. La validación del mapa de quejas con 100 frases da una precisión de 0,680, así que el mapa sirve para ordenar los aspectos, no como cifras exactas.
